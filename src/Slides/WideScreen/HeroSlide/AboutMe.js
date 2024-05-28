@@ -29,7 +29,7 @@ const AboutMeTitle = styled.div.attrs({
     font-size: 200px;
   }
   @media ${device.desktop} {
-    font-size: 350px;
+    font-size: 300px;
   }
 `;
 
@@ -51,7 +51,7 @@ const AboutMeDescription = styled.div`
   }
   @media ${device.desktop} {
     transform: translateY(80%);
-    font-size: 70px;
+    font-size: 60px;
   }
 `;
 
