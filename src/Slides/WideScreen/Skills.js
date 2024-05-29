@@ -26,9 +26,11 @@ const SkillsTitle = styled.div.attrs({
   }
   @media ${device.laptopL} {
     font-size: 200px;
+    right: -80%;
   }
   @media ${device.desktop} {
     font-size: 200px;
+    right: -20%;
   }
 `;
 

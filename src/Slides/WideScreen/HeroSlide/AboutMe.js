@@ -51,7 +51,7 @@ const AboutMeDescription = styled.div`
   }
   @media ${device.desktop} {
     transform: translateY(80%);
-    font-size: 60px;
+    font-size: 38px;
   }
 `;
 
