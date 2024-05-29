@@ -1,27 +1,32 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import VoistrapImages from './ParallaxImages/VoistrapImages';
-import FastRetailingImages from './ParallaxImages/FastRetailingImages';
-import WhatsMyFoodImages from './ParallaxImages/WhatsMyFoodImages';
-import EyepImages from './ParallaxImages/EyepImages';
-import TeslaImages from './ParallaxImages/TeslaImages';
-import LashicImages from './ParallaxImages/LashicImages';
+import React, { Component } from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import VoistrapImages from "./ParallaxImages/VoistrapImages";
+import FastRetailingImages from "./ParallaxImages/FastRetailingImages";
+import WhatsMyFoodImages from "./ParallaxImages/WhatsMyFoodImages";
+import EyepImages from "./ParallaxImages/EyepImages";
+import TeslaImages from "./ParallaxImages/TeslaImages";
+import LashicImages from "./ParallaxImages/LashicImages";
+import device from "../../../Assets/Responsive/breakpoints";
 
 const ImageContainer = styled.div`
-/** border: 10px dashed black; */
-margin-left:50%;
-width:50%;
-height:925vh;
-display: flex;
-flex-flow: column nowrap;
+  /** border: 10px dashed black; */
+  margin-left: 50%;
+  width: 80%;
+  height: 925vh;
+  display: flex;
+  flex-flow: column nowrap;
 `;
 
 const ImageBox = styled.div`
-/** outline: 5px dashed green; */
-margin-top:40vh;
-height: 100vh;
-position: relative;
+  /** outline: 5px dashed green; */
+  margin-top: 40vh;
+  height: 100vh;
+
+  position: relative;
+  @media ${device.laptop} {
+    width: 100vh;
+  }
 `;
 
 class ImageContent extends Component {
@@ -36,21 +41,29 @@ class ImageContent extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-    this.setState({ scrollHeight: Math.round(window.document.documentElement.scrollHeight) });
-    this.setState({ screenHeight: Math.round(window.document.documentElement.clientHeight) });
+    window.addEventListener("scroll", this.handleScroll);
+    this.setState({
+      scrollHeight: Math.round(window.document.documentElement.scrollHeight),
+    });
+    this.setState({
+      screenHeight: Math.round(window.document.documentElement.clientHeight),
+    });
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
   }
 
   handleScroll() {
     const { body, documentElement } = window.document;
     const sd = Math.max(body.scrollTop, documentElement.scrollTop);
-    const sp = (sd / (documentElement.scrollHeight - documentElement.clientHeight) * 100);
-    const minlimit = (documentElement.clientHeight * 100) / documentElement.scrollHeight;
-    const maxlimit = (documentElement.clientHeight * 1040) / documentElement.scrollHeight;
+    const sp =
+      (sd / (documentElement.scrollHeight - documentElement.clientHeight)) *
+      100;
+    const minlimit =
+      (documentElement.clientHeight * 100) / documentElement.scrollHeight;
+    const maxlimit =
+      (documentElement.clientHeight * 1040) / documentElement.scrollHeight;
     if (sp >= minlimit && sp <= maxlimit) {
       this.setState({ scrollPercent: sp });
     }
