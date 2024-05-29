@@ -32,7 +32,7 @@ class Work extends Component {
         number: "01",
         projectName: "TR Finanças",
         projectDesc:
-          "Gerenciador de controle financeiro. Tenha total controle das suas economias e despesas de forma prática, segura.",
+          "Gerenciador de controle financeiro. Tenha total controle das suas economias e despesas de forma prática.",
         projectType: "Android",
         roles: ["Xamarin.Android", "MvvmCross"],
       },
@@ -46,11 +46,11 @@ class Work extends Component {
       },
       {
         number: "03",
-        projectName: "Eyep",
+        projectName: "App Patrimonio",
         projectDesc:
-          "Single purpose website to show your IP address and location.",
-        projectType: "WEB APP",
-        roles: ["UI Designer", "Front-end Developer"],
+          "Aplicativo para cadastro de informações/imagens sobre patrimônios em Órgãos Públicos.",
+        projectType: "Android",
+        roles: ["Freelancer", "Xamarin.Android", "MvvmCross"],
       },
       {
         number: "04",
