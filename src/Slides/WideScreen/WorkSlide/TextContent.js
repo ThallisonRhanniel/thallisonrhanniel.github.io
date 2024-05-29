@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
-import styled, { keyframes } from 'styled-components';
-import PropTypes from 'prop-types';
-import device from '../../../Assets/Responsive/breakpoints';
+import React, { Component } from "react";
+import styled, { keyframes } from "styled-components";
+import PropTypes from "prop-types";
+import device from "../../../Assets/Responsive/breakpoints";
 
 const TextContainer = styled.section`
-position: fixed;
-top:0;
-left:0;
-display: flex;
-flex-flow: column nowrap;
-/** border: 5px dashed black; */
-height:100vh;
-width: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  /** border: 5px dashed black; */
+  height: 100vh;
+  width: 50%;
 `;
 
 const ProjectName = styled.div`
-  font-family: 'AvenirHeavy';
+  font-family: "AvenirHeavy";
   @media ${device.laptop} {
     font-size: 60px;
   }
@@ -23,14 +23,14 @@ const ProjectName = styled.div`
     font-size: 70px;
   }
   @media ${device.desktop} {
-    font-size: 110px;
+    font-size: 80px;
   }
   /* border: 1px dashed black; */
 `;
 
 const ProjectDesc = styled.div`
-  padding-top:2%;
-  font-family: 'AvenirBook';
+  padding-top: 2%;
+  font-family: "AvenirBook";
   @media ${device.laptop} {
     font-size: 25px;
   }
@@ -38,14 +38,14 @@ const ProjectDesc = styled.div`
     font-size: 30px;
   }
   @media ${device.desktop} {
-    font-size: 50px;
+    font-size: 40px;
   }
   /* border: 1px dashed black; */
 `;
 
 const MyRole = styled.div`
-  padding-top:5%;
-  font-family: 'AvenirMedium';
+  padding-top: 5%;
+  font-family: "AvenirMedium";
   @media ${device.laptop} {
     font-size: 25px;
   }
@@ -53,13 +53,13 @@ const MyRole = styled.div`
     font-size: 30px;
   }
   @media ${device.desktop} {
-    font-size: 50px;
+    font-size: 40px;
   }
   /* border: 1px dashed black; */
 `;
 
 const ProjectID = styled.div`
-  font-family: 'AvenirHeavy';
+  font-family: "AvenirHeavy";
   @media ${device.laptop} {
     font-size: 25px;
   }
@@ -67,14 +67,14 @@ const ProjectID = styled.div`
     font-size: 30px;
   }
   @media ${device.desktop} {
-    font-size: 58px;
+    font-size: 40px;
   }
   /* border: 1px dashed black; */
   padding: 5%;
 `;
 
 const ProjectType = styled.div`
-  font-family: 'AvenirHeavy';
+  font-family: "AvenirHeavy";
   @media ${device.laptop} {
     font-size: 25px;
   }
@@ -82,29 +82,28 @@ const ProjectType = styled.div`
     font-size: 30px;
   }
   @media ${device.desktop} {
-    font-size: 58px;
+    font-size: 40px;
   }
   /* border: 1px dashed black; */
   padding: 5%;
 `;
 
 const ProjectDetails = styled.div`
-display: flex;
-flex-flow: column nowrap;
-/* border: 1px dashed black; */
-width: 100%;
-padding: 5%;
-padding-left:10%;
+  display: flex;
+  flex-flow: column nowrap;
+  /* border: 1px dashed black; */
+  width: 100%;
+  padding: 5%;
+  padding-left: 10%;
 `;
 
-
 const ProjectDetailsContainer = styled.div`
-display: flex;
-flex-flow: column nowrap;
-align-items: center;
-/* border: 2px solid black; */
-padding-top:5%;
-height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  /* border: 2px solid black; */
+  padding-top: 5%;
+  height: 100%;
 `;
 
 const appearText = () => keyframes`
@@ -131,35 +130,29 @@ const revBlock = () => keyframes`
 }
 `;
 
-
-let BlockTextReveal = styled.span`
-`;
+let BlockTextReveal = styled.span``;
 
 const BlockTextRevealQuick = styled.span`
-display:${props => (props.inline ? 'inline' : 'block')};
-color: #FFF;
-animation: ${appearText} 0.0001s linear forwards;
-animation-delay: 0.5s;
-position: relative;
+  display: ${(props) => (props.inline ? "inline" : "block")};
+  color: #fff;
+  animation: ${appearText} 0.0001s linear forwards;
+  animation-delay: 0.5s;
+  position: relative;
 
-
-
-&::after{
-content:'';
-top:0;
-left:0;
-position:absolute;
-width:0%;
-height:100%;
-background: #222;
-animation: ${revBlock} 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-animation-delay:0s;
-}
+  &::after {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background: #222;
+    animation: ${revBlock} 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0s;
+  }
 `;
 
-const BlockTextRevealNoAnim = styled.span`
-
-`;
+const BlockTextRevealNoAnim = styled.span``;
 
 class TextContent extends Component {
   constructor(props) {
@@ -178,17 +171,21 @@ class TextContent extends Component {
     const { refreshToggle } = nextProps;
     if (refreshToggle) {
       BlockTextReveal = BlockTextRevealNoAnim;
-      this.setState({ refreshBlock: true },
-        () => {
-          BlockTextReveal = BlockTextRevealQuick;
-          this.setState({ refreshBlock: false });
-        });
+      this.setState({ refreshBlock: true }, () => {
+        BlockTextReveal = BlockTextRevealQuick;
+        this.setState({ refreshBlock: false });
+      });
     }
   }
 
   render() {
     const {
-      number, projectName, projectDesc, roles, projectType, refreshToggle,
+      number,
+      projectName,
+      projectDesc,
+      roles,
+      projectType,
+      refreshToggle,
     } = this.props;
     return (
       <TextContainer>
@@ -206,16 +203,16 @@ class TextContent extends Component {
             </ProjectName>
             <MyRole>
               <BlockTextReveal refreshToggle={refreshToggle} inline>
-                {roles.map((role, index, arr) => (index === arr.length - 1 ? (
-                  <span key={role}>
-                    {role}
-                  </span>
-                ) : (
-                  <span key={role}>
-                    {role}
-                        &nbsp; • &nbsp;
-                  </span>
-                )))}
+                {roles.map((role, index, arr) =>
+                  index === arr.length - 1 ? (
+                    <span key={role}>{role}</span>
+                  ) : (
+                    <span key={role}>
+                      {role}
+                      &nbsp; • &nbsp;
+                    </span>
+                  )
+                )}
               </BlockTextReveal>
             </MyRole>
             <ProjectDesc>

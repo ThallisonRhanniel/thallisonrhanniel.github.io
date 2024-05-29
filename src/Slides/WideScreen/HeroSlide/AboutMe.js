@@ -29,7 +29,7 @@ const AboutMeTitle = styled.div.attrs({
     font-size: 200px;
   }
   @media ${device.desktop} {
-    font-size: 300px;
+    font-size: 200px;
   }
 `;
 
